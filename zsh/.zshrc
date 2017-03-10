@@ -96,6 +96,7 @@ alias chimp-prod="ln -fs ~/.rest_connection/rest_api_config.yaml.PRODUCTION ~/.r
 alias chimp-cads="ln -fs ~/.rest_connection/rest_api_config.yaml.CADS ~/.rest_connection/rest_api_config.yaml"
 
 alias stage_namespace='STAGE_NAMESPACE=`ruby ~/Code/extact_namespace_staging.rb`; echo $STAGE_NAMESPACE'
+alias dynamo_stage_namespace='DYNAMO_STAGE_NAMESPACE=`ruby ~/Code/dynamo_staging_namespace.rb`; echo $DYNAMO_STAGE_NAMESPACE'
 
 alias publish_templates='chimp-stage; cd ~/Code/release_automation/; bundle exec rs_templates --template-set="config/all/template_sets/production.yml" --account-groups="config/all/account_groups/accounts.json" publish'
 alias import_templates='cd ~/Code/release_automation/; bundle exec rs_templates --template-set="config/all/template_sets/production.yml" import'
@@ -107,6 +108,13 @@ hotfix(){
   service=$1
   cd ~/Code/release_automation
   bundle exec ./tip.rb --no-launch-chimpd --namespace=$STAGE_NAMESPACE stage hotfix $1
+}
+
+dynamo_hotfix(){
+  dynamo_stage_namespace
+  service=$1
+  cd ~/Code/release_automation
+  bundle exec ./tip.rb --no-launch-chimpd --namespace=$DYNAMO_STAGE_NAMESPACE stage hotfix $1
 }
 
 dry_hotfix(){

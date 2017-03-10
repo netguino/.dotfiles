@@ -1,7 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/markitoxs/Code/docker_configs/rightscale/production/global'
-let g:netrw_dirhist_2='/home/markitoxs/Code/release_automation/lib/rightscale'
-let g:netrw_dirhist_3='/home/markitoxs/Code/arch-install/scripts'
-let g:netrw_dirhist_4='/home/markitoxs/Code/arch-install'
-let g:netrw_dirhist_5='/home/markitoxs/Code/arch-install/scripts'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/markitoxs/Code/release_automation/lib/rightscale'
