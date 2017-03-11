@@ -60,3 +60,4 @@ alias play='play_ace'
 # Load up extra files
 source $ZSH/oh-my-zsh.sh
 source ~/.zshrc_secrets
+source ~/.zshenv
