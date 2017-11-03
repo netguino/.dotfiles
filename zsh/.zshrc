@@ -90,49 +90,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 eval "$(rbenv init -)"
 
-alias chimp-minimoo="ln -fs ~/.rest_connection/rest_api_config.yaml.MINIMOO ~/.rest_connection/rest_api_config.yaml"
-alias chimp-stage="ln -fs ~/.rest_connection/rest_api_config.yaml.STAGE ~/.rest_connection/rest_api_config.yaml"
-alias chimp-prod="ln -fs ~/.rest_connection/rest_api_config.yaml.PRODUCTION ~/.rest_connection/rest_api_config.yaml"
-alias chimp-cads="ln -fs ~/.rest_connection/rest_api_config.yaml.CADS ~/.rest_connection/rest_api_config.yaml"
-
-alias stage_namespace='STAGE_NAMESPACE=`ruby ~/Code/extact_namespace_staging.rb`; echo $STAGE_NAMESPACE'
-alias dynamo_stage_namespace='DYNAMO_STAGE_NAMESPACE=`ruby ~/Code/dynamo_staging_namespace.rb`; echo $DYNAMO_STAGE_NAMESPACE'
-
-alias publish_templates='chimp-stage; cd ~/Code/release_automation/; bundle exec rs_templates --template-set="config/all/template_sets/production.yml" --account-groups="config/all/account_groups/accounts.json" publish'
-alias import_templates='cd ~/Code/release_automation/; bundle exec rs_templates --template-set="config/all/template_sets/production.yml" import'
-
 source ~/.zshrc_secrets
+source ~/.zsh_aliases
 
-hotfix(){
-  stage_namespace
-  service=$1
-  cd ~/Code/release_automation
-  bundle exec ./tip.rb --no-launch-chimpd --namespace=$STAGE_NAMESPACE stage hotfix $1
-}
-
-dynamo_hotfix(){
-  dynamo_stage_namespace
-  service=$1
-  cd ~/Code/release_automation
-  bundle exec ./tip.rb --no-launch-chimpd --namespace=$DYNAMO_STAGE_NAMESPACE stage hotfix $1
-}
-
-dry_hotfix(){
-  stage_namespace
-  service=$1
-  cd ~/Code/release_automation
-  bundle exec ./tip.rb --dry-run --no-launch-chimpd --namespace=$STAGE_NAMESPACE stage hotfix $1
-}
-
-# Acestream section
-# 0 - launch acestream-engine
-# 1 - launch vlc
-# 2 - launch proxy
-play_ace(){
-  id=$(echo $1 | cut -f3 -d/)
-  cvlc http://127.0.0.1:8000/pid/$id/stream.mp4
-}
-alias play='play_ace'
-
-# Import colorscheme from 'wal'
-(/home/markitoxs/Code/wal/wal -r &)

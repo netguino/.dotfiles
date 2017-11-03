@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/markitoxs/Code/release_automation/lib/rightscale'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/markitoxs/Code/release_automation/spec'
+let g:netrw_dirhist_2='/home/markitoxs/Code/release_automation/lib/minimoo'
+let g:netrw_dirhist_3='/home/markitoxs/Code/release_automation/lib'
+let g:netrw_dirhist_4='/home/markitoxs/Code/release_automation/lib/rightscale'
