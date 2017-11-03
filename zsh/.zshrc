@@ -1,49 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/markitoxs/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME='agnoster'
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+DEFAULT_USER="markitoxs"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -52,39 +11,12 @@ ZSH_THEME='agnoster'
 plugins=(git)
 
 # User configuration
+# Add wal and perl to path
+export PATH="/home/markitoxs/src/wal:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
-export PATH="/home/markitoxs/Code/wal:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-DEFAULT_USER="markitoxs"
 
 alias new-post="sh ~/Code/postwrapper/wrapper.sh "
+<<<<<<< HEAD
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 
@@ -93,3 +25,50 @@ eval "$(rbenv init -)"
 source ~/.zshrc_secrets
 source ~/.zsh_aliases
 
+=======
+alias chimp-minimoo="ln -fs ~/.rest_connection/rest_api_config.yaml.MINIMOO ~/.rest_connection/rest_api_config.yaml"
+alias chimp-stage="ln -fs ~/.rest_connection/rest_api_config.yaml.STAGE ~/.rest_connection/rest_api_config.yaml"
+alias chimp-prod="ln -fs ~/.rest_connection/rest_api_config.yaml.PRODUCTION ~/.rest_connection/rest_api_config.yaml"
+alias chimp-cads="ln -fs ~/.rest_connection/rest_api_config.yaml.CADS ~/.rest_connection/rest_api_config.yaml"
+
+alias stage_namespace='STAGE_NAMESPACE=`ruby ~/src/extact_namespace_staging.rb`; echo $STAGE_NAMESPACE'
+alias dynamo_stage_namespace='DYNAMO_STAGE_NAMESPACE=`ruby ~/src/dynamo_staging_namespace.rb`; echo $DYNAMO_STAGE_NAMESPACE'
+
+alias publish_templates='chimp-stage; cd ~/src/release_automation/; bundle exec rs_templates --template-set="config/all/template_sets/production.yml" --account-groups="config/all/account_groups/accounts.json" publish'
+alias import_templates='cd ~/sr/crelease_automation/; bundle exec rs_templates --template-set="config/all/template_sets/production.yml" import'
+
+hotfix(){
+  stage_namespace
+  service=$1
+  cd ~/src/release_automation
+  bundle exec ./tip.rb --no-launch-chimpd --namespace=$STAGE_NAMESPACE stage hotfix $1
+}
+
+dynamo_hotfix(){
+  dynamo_stage_namespace
+  service=$1
+  cd ~/src/release_automation
+  bundle exec ./tip.rb --no-launch-chimpd --namespace=$DYNAMO_STAGE_NAMESPACE stage hotfix $1
+}
+
+dry_hotfix(){
+  stage_namespace
+  service=$1
+  cd ~/src/release_automation
+  bundle exec ./tip.rb --dry-run --no-launch-chimpd --namespace=$STAGE_NAMESPACE stage hotfix $1
+}
+
+play_ace(){
+  id=$(echo $1 | cut -f3 -d/)
+  cvlc http://127.0.0.1:8000/pid/$id/stream.mp4
+}
+alias play='play_ace'
+
+# Import colorscheme from 'wal'
+(/home/markitoxs/src/wal/wal -r &)
+
+# Load up extra files
+source $ZSH/oh-my-zsh.sh
+source ~/.zshrc_secrets
+source ~/.zshenv
+>>>>>>> 6f92bb554be6e294f6bb705541fd9316ff13def3

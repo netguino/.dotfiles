@@ -1,10 +1,9 @@
-#exec --no-startup-id polybar base
-# exec --no-startup-id nitrogen --restore
+exec --no-startup-id wal -i ~/img/
 
 exec --no-startup-id xrandr --rate 120
 exec --no-startup-id xflux -z 97213
-#exec --no-startup-id polybar example
 exec_always --no-startup-id xrdb ~/.Xresources
+
 exec_always --no-startup-id wal -i ~/Wallpapers/calvin_and_hobbes.jpg 
 #exec_always --no-startup-id mpv  /home/markitoxs/Wallpapers/bar.gif --wid 0 --no-keepaspect
 
@@ -19,22 +18,13 @@ exec_always --no-startup-id wal -i ~/Wallpapers/calvin_and_hobbes.jpg
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+
+# Mod 4 is SUPER KEY - If mac keyboard, change to Mod1
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -74,9 +64,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -118,7 +108,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# Suspend 
+# Suspend
 bindsym $mod+Ctrl+l exec "systemctl suspend"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -205,8 +195,12 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+<<<<<<< HEAD
 for_window [class="steam"] fullscreen enable, floating disable, border none
 for_window [class="Steam"] border none
+=======
+
+>>>>>>> 6f92bb554be6e294f6bb705541fd9316ff13def3
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
