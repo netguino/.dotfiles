@@ -16,7 +16,6 @@ export PATH="/home/markitoxs/src/wal:/usr/local/sbin:/usr/local/bin:/usr/bin:/us
 
 
 alias new-post="sh ~/Code/postwrapper/wrapper.sh "
-<<<<<<< HEAD
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 
@@ -25,7 +24,6 @@ eval "$(rbenv init -)"
 source ~/.zshrc_secrets
 source ~/.zsh_aliases
 
-=======
 alias chimp-minimoo="ln -fs ~/.rest_connection/rest_api_config.yaml.MINIMOO ~/.rest_connection/rest_api_config.yaml"
 alias chimp-stage="ln -fs ~/.rest_connection/rest_api_config.yaml.STAGE ~/.rest_connection/rest_api_config.yaml"
 alias chimp-prod="ln -fs ~/.rest_connection/rest_api_config.yaml.PRODUCTION ~/.rest_connection/rest_api_config.yaml"
@@ -70,5 +68,3 @@ alias play='play_ace'
 # Load up extra files
 source $ZSH/oh-my-zsh.sh
 source ~/.zshrc_secrets
-source ~/.zshenv
->>>>>>> 6f92bb554be6e294f6bb705541fd9316ff13def3
