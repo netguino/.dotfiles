@@ -11,6 +11,7 @@ Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true
 Xft.hintstyle: hintslight
+!! Xft.dpi: 110
 Xft.dpi: 96
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
@@ -30,7 +31,7 @@ rofi.bw: 3
 URxvt*scrollBar: false
 URxvt.background: #2E3440
 URxvt.foreground: #FFFFFF
-URxvt*font: xft:Inconsolata for Powerline:pixelsize=13:antialias=true
+URxvt*font: xft:Inconsolata for Powerline:size=12:antialias=true
 URxvt*cursorUnderline: true
 URxvt.letterSpace: -1
 

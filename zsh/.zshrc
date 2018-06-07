@@ -9,7 +9,7 @@ DEFAULT_USER="markitoxs"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git ssh-agent)
 
 # User configuration
 # Add wal and perl to path
@@ -24,3 +24,4 @@ eval "$(rbenv init -)"
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
 source ~/.zshrc_secrets
+

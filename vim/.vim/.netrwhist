@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/markitoxs/Code/release_automation/terraform/global_dynamo_cluster/modules/aws'
-let g:netrw_dirhist_2='/home/markitoxs/Code/release_automation/terraform/global_dynamo_cluster/modules'
-let g:netrw_dirhist_3='/home/markitoxs/Code/release_automation/terraform/global_dynamo_cluster'
-let g:netrw_dirhist_4='/home/markitoxs/Code/release_automation/terraform/global_dynamo_cluster/modules'
-let g:netrw_dirhist_5='/home/markitoxs/Code/release_automation/terraform/global_dynamo_cluster/modules/k8-worker'
-let g:netrw_dirhist_6='/home/markitoxs/Code/release_automation/terraform/global_dynamo_cluster/modules/aws'
-let g:netrw_dirhist_7='/home/markitoxs/Code/arch-install/vbox/scripts'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/markitoxs'
+let g:netrw_dirhist_2='/home/markitoxs/.config'
