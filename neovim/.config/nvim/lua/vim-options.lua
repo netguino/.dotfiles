@@ -2,6 +2,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set cmdheight=1")
 vim.g.mapleader = " "
 vim.keymap.set('n', '<c-z>', ':undo<CR>')
 -- Navigate vim panes better
