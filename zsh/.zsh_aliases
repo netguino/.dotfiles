@@ -1,0 +1,30 @@
+#neovim
+alias nv="nvim"
+
+##awsume
+alias awsume=". awsume"
+alias kc="kubie ctx"
+alias kn="kubie ns"
+# ruby
+alias bert="bundle exec rake test"
+
+# kubernetes
+alias k="kubectl"
+alias klogin="kubectl delete secret dockerhub ; kubectl create secret docker-registry dockerhub --docker-server=https://index.docker.io/v1/ --docker-username=\${DOCKER_USERNAME} --docker-password=\${DOCKER_PAT}"
+
+alias skind="systemd-run --scope --user kind"
+alias wk="watch -n 0.2 kubectl"
+
+function push-image () {
+  echo "Tagging image... from ${1} to localhost:5000/${1}"
+  podman tag $1 localhost:5000/$1
+  echo "Pushing image..."
+  podman push $1 localhost:5000/$1
+  echo "Forcing pull on cluster..."
+  kubectl run -it --rm test --image-pull-policy=Always --image localhost:5000/$1 -- bash
+}
+
+#folder shortcuts
+alias pst="cd ~/src/pst/"
+
+alias steal="mirrord exec -f mirrord-config.json --"
