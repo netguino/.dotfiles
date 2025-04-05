@@ -1,3 +1,4 @@
+-- Tree based highlighting
 return {
   {
     "nvim-treesitter/nvim-treesitter",

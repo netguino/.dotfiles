@@ -4,7 +4,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set cmdheight=1")
 
-vim.cmd("set clipboard=unnamed")
+vim.cmd("set clipboard+=unnamedplus")
 
 -- leader key to space --
 vim.g.mapleader = " "

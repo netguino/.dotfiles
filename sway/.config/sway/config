@@ -3,10 +3,10 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-default_border pixel 1
+default_border pixel 0
 
-gaps inner 10
-gaps outer 10
+gaps inner 2
+gaps outer 1
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -34,7 +34,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg /home/netguino/Pictures/wallpaper.png fill
+output * bg /home/netguino/Pictures/wallpaper.jpg fill
 #
 # Example configuration:
 #
