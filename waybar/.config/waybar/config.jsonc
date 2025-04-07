@@ -19,11 +19,11 @@
         "pulseaudio",
         //"network",
         "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
+        //"cpu",
+        //"memory",
+        //"temperature",
         "backlight",
-        "sway/language",
+        //"sway/language",
         //"battery",
         "clock",
         "tray"
@@ -102,9 +102,13 @@
         "spacing": 10
     },
     "clock": {
+        "format": "  {:%H:%M - %Y-%m-%d}",
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "tooltip-format": "{tz_list}",
+    "timezones": [
+        "America/Los_Angeles",
+        "UTC",
+      ]
     },
     "cpu": {
         "format": "{usage}% ",
