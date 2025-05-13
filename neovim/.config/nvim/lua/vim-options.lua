@@ -18,6 +18,11 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+
+-- Harpoon --
+--vim.keymap.set('n', '<c-h-a>', ':lua require("harpoon.mark").add_file()<CR>')
+--vim.keymap.set('n', '<c-h-l>', ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
+
 vim.wo.number = true
 
 ---- Delete whitespace
@@ -26,4 +31,9 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
-
+-- Diagnostic settings
+vim.diagnostic.config {
+  virtual_text = false,
+  signs = true,
+  underline = false,
+}
