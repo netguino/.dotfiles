@@ -27,3 +27,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 
+-- Disable perl provider
+vim.cmd("let g:loaded_perl_provider = 0")
+-- Disable python provider
+vim.cmd("let g:loaded_python_provider = 0")
