@@ -1,6 +1,5 @@
 return {
   "olimorris/codecompanion.nvim",
-  build = ":CodeCompanion setup", -- <--- Add this line
   opts = {
     extensions = {
       mcphub = {
@@ -38,13 +37,9 @@ return {
     },
   },
   dependencies = {
+    "OXY2DEV/markview.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     "ravitemer/mcphub.nvim"
   },
-
-  keys = {
-    { "<leader>cc", function() require("codecompanion").chat_toggle() end, desc = "Toggle CodeCompanion Chat" },
-  },
-
 }
