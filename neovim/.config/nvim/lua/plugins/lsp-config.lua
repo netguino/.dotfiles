@@ -14,7 +14,7 @@ return {
     lazy = false,
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ruby_lsp", "tsserver", "html", "cssls", "bashls", "sqlls", "dockerls" },
+        ensure_installed = { "lua_ls", "ruby_lsp", "html", "cssls", "bashls", "sqlls", "dockerls" },
       })
     end,
   },
@@ -27,7 +27,7 @@ return {
         { on_attach = function(client) client.server_capabilities.semanticTokensProvider = nil end })
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       lsp.lua_ls.setup({ capabilities = capabilities })
-      lsp.ruby_ls.setup({ capabilities = capabilities })
+      lsp.ruby_lsp.setup({ capabilities = capabilities })
       lsp.dockerls.setup({ capabilities = capabilities })
       local toggle_diagnostic = function()
         if vim.diagnostic.is_disabled() then
