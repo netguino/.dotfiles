@@ -7,6 +7,7 @@ return {
     -- For blink.cmp's completion
     -- source
     dependencies = {
+        "nvim-treesitter/nvim-treesitter",
         "saghen/blink.cmp"
     },
 };

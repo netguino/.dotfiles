@@ -27,7 +27,12 @@ return {
         { on_attach = function(client) client.server_capabilities.semanticTokensProvider = nil end })
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       lsp.lua_ls.setup({ capabilities = capabilities })
-      lsp.ruby_lsp.setup({ capabilities = capabilities })
+
+
+      lsp.ruby_lsp.setup({
+        capabilities = capabilities,
+        cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
+      })
       lsp.dockerls.setup({ capabilities = capabilities })
       local toggle_diagnostic = function()
         if vim.diagnostic.is_disabled() then
