@@ -1,6 +1,8 @@
 #neovim
 alias nv="nvim"
 
+alias tf="terraform"
+
 ##awsume
 alias awsume=". awsume"
 alias kc="kubie ctx"
