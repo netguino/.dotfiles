@@ -6,9 +6,10 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 export GPG_TTY=$(tty)
 
-ZSH_THEME="sunaku"
-ZSH_THEME="bira"
-export DEFAULT_USER=marc.goujon
+ZSH_THEME="edvardm"
+
+export DEFAULT_USER=$USER
+
 precmd() {
   precmd() {
     echo ""
